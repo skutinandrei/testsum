@@ -1,0 +1,106 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" ng-app="appFix" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8" />
+    <title ng-bind="($title || 'Welcome to application for Fix')" class="ng-binding">Шаг: 2</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="http://rulkov.ru/qa/app.min.css" rel="stylesheet" />
+    <script src="http://rulkov.ru/qa/app.min.js"></script>
+	<base href="http://rulkov.ru/qa/" />
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div>
+    <acme-navbar class="ng-isolate-scope"><nav class="navbar navbar-static-top navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <span class="glyphicon glyphicon-home"></span>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav">
+                <li class="active"><a ng-href="/" href="/">Home</a></li>
+                <!--<li><a ng-href="/about">About</a></li>-->
+                <li><a ng-href="/qa/addition" href="/qa/addition">Операция сложения</a></li>
+                <li><a ng-href="/qa/login" href="/qa/login">Login</a></li>
+                <li><a ng-href="/qa/logout" href="/qa/logout">logout</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+</acme-navbar>
+</div>
+
+
+<!-- uiView:  --><div ui-view="" class="ng-scope"><div class="container ng-scope">
+    <h1>Операция сложения</h1>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 hidden-xs">
+            <h3 class="ng-binding">Привет, WQA!</h3> <br />
+            <div class="animate-switch-container" ng-switch="" on="vm.calculator">
+                <!-- ngSwitchWhen: 0 -->
+                <!-- ngSwitchWhen: 1 --><div class="animate-switch ng-scope" ng-switch-when="1">
+                    <h4>Шаг "Подтверждение данных"</h4>
+                    На данном шаге, пользователю в табличном виде представляются данные, которые он ввел на шаге "Ввода данных".
+                </div><!-- end ngSwitchWhen: -->
+                <!-- ngSwitchWhen: 2 -->
+                <!-- ngSwitchWhen: 3 -->
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12" style="background-color: #F7FFF9;">
+            <fix-calculator index="vm.calculator" class="ng-isolate-scope"><div class="calculator">
+    <div class="steps  slide-left" ng-class="vm.slideDir" style="">
+
+        <!--step1-->
+        <!-- ngIf: vm.steps[0] -->
+
+        <!--step2-->
+        <!-- ngIf: vm.steps[1] --><div ng-if="vm.steps[1]" class="ng-scope" style="">
+            <h4>Подтверждение данных</h4>
+            <table class="table table-hover">
+                <tbody>
+                <tr>
+                    <th scope="row">Значение 1</th>
+                    <td class="ng-binding">1</td>
+                </tr>
+                <tr>
+                    <th scope="row">Значение 2</th>
+                    <td class="ng-binding">2</td>
+                </tr>
+                <tr>
+                    <th scope="row">Значение 3</th>
+                    <td class="ng-binding">3</td>
+                </tr>
+                </tbody>
+            </table>
+        </div><!-- end ngIf: vm.steps[1] -->
+
+        <!--step3-->
+        <!-- ngIf: vm.steps[2] -->
+
+        <!--step4-->
+        <!-- ngIf: vm.steps[3] -->
+    </div>
+
+    <div class="buttons">
+        <input type="button" value="Назад" class="btn btn-success" ng-disabled="vm.index == 0 || vm.isEnabledBtnBack" ng-click="vm.prev()" disabled="disabled" />
+        <input type="button" value="Вперед" class="btn btn-success" ng-disabled="vm.isEnabledBtnNext" ng-click="vm.next()" />
+    </div>
+
+</div></fix-calculator>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+</body></html>
